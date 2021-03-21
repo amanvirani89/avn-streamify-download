@@ -1,0 +1,83 @@
+/* Login Design */
+.login-area {
+  margin: 150px auto;
+  background-color: white;
+}
+
+.Login-main-container {
+  display: flex;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.Login-svg {
+  width: 45%;
+  background-color: #f7f9fe;
+  position: relative;
+}
+.Login-svg img {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  right: 0;
+}
+.login {
+  max-width: 100%;
+  height: auto;
+}
+
+.Login-form {
+  /* background-color: #F50057; */
+  /* background-image: linear-gradient(to bottom right, #ffb8b7, #ff5da9, #F50057); */
+  padding: 40px;
+  box-shadow: 3px 3px 16px 2px rgb(0 0 0 / 4%);
+  width: 55%;
+}
+
+.Login-form h1 {
+  color: #f12711;
+  text-align: left;
+}
+.Login-form h3 {
+  padding: 1em;
+  text-align: left;
+}
+.Login-form-group {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em;
+}
+
+.Login-form-group label {
+  padding: 1em;
+}
+.Login-form-group input {
+  padding: 1em;
+  border: none;
+  border-bottom: 2px solid black;
+  outline-width: 0;
+  /* border-radius: 4em; */
+}
+.Login-form-group input:focus {
+  border-bottom: 2px solid red;
+}
+.Login-form-group input[type='submit'] {
+  padding: 1em 5em;
+  border-bottom: none;
+  background-color: #f50057;
+  background-image: linear-gradient(to bottom right, #13ffff, #3ba3ff, #182980);
+}
+.Login-form-group input[type='checkbox'] {
+  display: inline;
+}
+.reset-pass-green {
+  padding: 1em;
+  color: darkgreen;
+  background-color: #98fb98;
+}
+.reset-pass-red {
+  padding: 1em;
+  color: red;
+  background-color: #ffcccb;
+}

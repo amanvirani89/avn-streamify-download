@@ -1,0 +1,22 @@
+.movie-group {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+}
+.movie-data {
+  display: flex;
+  overflow-x: scroll;
+  cursor: pointer;
+  object-fit: contain;
+}
+.movie-data img {
+  width: 320px;
+  height: 320px;
+  margin: 0.2em;
+  /* border: 5px solid rgb(219, 8, 8); */
+  border-radius: 2em;
+}
+.movie-data img:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}

@@ -1,0 +1,67 @@
+header .navigation {
+  background-color: black;
+
+  position: fixed;
+  color: #ffffff;
+  top: 0;
+  height: 70px;
+  width: 100%;
+  opacity: 0.9;
+  z-index: 150;
+}
+.Logo {
+  padding: 2px;
+  float: left;
+  text-decoration: none;
+}
+.Logo img {
+  padding-left: 10px;
+  padding-bottom: 25px;
+  height: 90px;
+  text-decoration: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.btn-sign-in a {
+  background-color: #13ffff;
+  background-image: linear-gradient(to bottom right, #13ffff, #3ba3ff, #1a2980);
+  color: white;
+  margin-right: 36px;
+  align-content: center;
+  padding: 14px 25px;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  float: right;
+  border-radius: 25px;
+}
+
+.btn-sign-in a:hover,
+a:active {
+  background-color: transparent;
+  color: red;
+  border-style: solid;
+  border-color: red;
+  border-width: thin;
+}
+
+@media screen and (max-width: 960px) {
+  header .navigation {
+    width: 100%;
+    height: 70px;
+  }
+  .Logo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: auto;
+  }
+  .btn-sign-in a {
+    padding-top: 5px;
+    margin-right: 10px;
+    text-align: center;
+    align-content: center;
+  }
+}
