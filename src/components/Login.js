@@ -1,10 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from '../firebase';
-
+import '../css/login.css';
 import login from '../images/login.png';
 
 function Login() {
+  const [message, setMessage] = useState(null);
+  const [hasError, setError] = useState(false);
+
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
@@ -17,9 +20,16 @@ function Login() {
       )
       .then((userAuth) => {
         console.log(userAuth);
+        setMessage('');
+        setError(false);
       })
       .catch((error) => {
-        alert(error.message);
+        // alert(error.message);
+        if (error.message.includes('password')) setMessage('Invalid Password');
+        else if (error.message.includes('no user record'))
+          setMessage('Invalid Email-id or Password');
+        else setMessage(error.message);
+        setError(true);
       });
   };
 
@@ -60,6 +70,11 @@ function Login() {
                   <span className="forgot">Forgot Password?</span>
                 </Link>
               </div>
+              {message != null && (
+                <div className="Login-form-group">
+                  <p className={hasError ? 'reset-pass-red' : ''}>{message}</p>
+                </div>
+              )}
               <div className="Login-form-group">
                 <input
                   onClick={signIn}

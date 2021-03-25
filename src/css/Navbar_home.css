@@ -1,0 +1,100 @@
+header .navigation {
+  background-color: black;
+
+  position: fixed;
+  color: #ffffff;
+  top: 0;
+  height: 70px;
+  width: 100%;
+  opacity: 0.9;
+  z-index: 150;
+}
+.Logo {
+  padding: 2px;
+  float: left;
+  text-decoration: none;
+}
+.Logo img {
+  padding-left: 10px;
+  padding-bottom: 18px;
+  height: 70px;
+  text-decoration: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+.movies {
+  float: left;
+}
+.movies a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  text-decoration: none;
+}
+.movies a:hover {
+  background-color: #111;
+}
+
+.Search {
+  width: 100%;
+}
+
+.Search i {
+  float: left;
+  width: 20%;
+  text-align: left;
+  padding: 20px 20px;
+  color: white;
+  font-size: 30px;
+}
+
+.dropdown a {
+  float: right;
+  text-decoration: none;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.dropdown i {
+  float: right;
+  text-align: left;
+  padding: 15px 15px;
+  margin-right: 10px;
+  color: white;
+  font-size: 30px;
+}
+.dropdown-content {
+  display: none;
+  position: relative;
+  width: 15%;
+  float: right;
+  margin-top: 50px;
+  margin-right: 0px;
+  background-color: #f9f9f9;
+  color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content p {
+  text-align: center;
+  color: #111;
+}
+.btn-log-out {
+  text-align: center;
+  padding: 10px;
+}
+.btn-log-out button {
+  background-color: darkred;
+  color: white;
+  border-radius: 10px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

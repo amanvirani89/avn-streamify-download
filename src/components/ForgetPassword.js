@@ -15,7 +15,9 @@ function ForgetPassword() {
         setError(false);
       })
       .catch((e) => {
-        setMessage(e.message);
+        if (e.message.includes('no user record'))
+          setMessage('Invalid Email-id or User does not Exists');
+        else setMessage(e.message);
         setError(true);
       });
   };

@@ -11,16 +11,19 @@
 }
 
 .Login-svg {
-  width: 45%;
-  background-color: #f7f9fe;
+  width: 60%;
+  /* background-color: #f7f9fe; */
+  /* background-image: linear-gradient(to bottom right, #13ffff, #3ba3ff, #182980); */
+
   position: relative;
 }
-.Login-svg img {
+/* .Login-svg img {
+  height: min-content; 
   position: absolute;
-  bottom: 25px;
+   bottom: 25px;
   left: 0;
   right: 0;
-}
+} */
 .login {
   max-width: 100%;
   height: auto;
@@ -29,9 +32,9 @@
 .Login-form {
   /* background-color: #F50057; */
   /* background-image: linear-gradient(to bottom right, #ffb8b7, #ff5da9, #F50057); */
-  padding: 40px;
+  /* padding: 10px; */
   box-shadow: 3px 3px 16px 2px rgb(0 0 0 / 4%);
-  width: 55%;
+  width: 40%;
 }
 
 .Login-form h1 {
@@ -39,25 +42,28 @@
   text-align: left;
 }
 .Login-form h3 {
-  padding: 1em;
+  /* padding: 1em; */
   text-align: left;
 }
 .Login-form-group {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 1.5em;
+  padding: 1em;
 }
 
-.Login-form-group label {
+/* .Login-form-group label {
   padding: 1em;
-}
+} */
 .Login-form-group input {
-  padding: 1em;
+  padding: 0.5em;
   border: none;
   border-bottom: 2px solid black;
   outline-width: 0;
   /* border-radius: 4em; */
+}
+.Login-form-group input[type='submit'] {
+  outline-width: medium;
 }
 .Login-form-group input:focus {
   border-bottom: 2px solid red;
@@ -71,13 +77,39 @@
 .Login-form-group input[type='checkbox'] {
   display: inline;
 }
+.Login-form-group a {
+  text-decoration: none;
+  color: gray;
+}
+.Login-form-group span:hover,
+.Login-form-group p:hover {
+  color: black;
+}
 .reset-pass-green {
-  padding: 1em;
+  padding: 0.5em;
   color: darkgreen;
   background-color: #98fb98;
 }
 .reset-pass-red {
-  padding: 1em;
+  padding: 0.5em;
   color: red;
   background-color: #ffcccb;
+}
+@media only screen and (max-width: 650px) {
+  .Login-svg {
+    display: none;
+  }
+  .Login-main-container {
+    justify-content: center;
+    width: auto;
+  }
+  .Login-form {
+    width: 100%;
+  }
+  form {
+    padding: 1em;
+  }
+  .login-area {
+    margin: 150px 0;
+  }
 }

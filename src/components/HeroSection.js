@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import wallpaper from '../images/3d-banner-collage.jpg';
+import '../css/HeroSection.css';
 
 function HeroSection() {
   return (

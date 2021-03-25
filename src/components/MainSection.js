@@ -6,6 +6,7 @@ import enjoyMovie from '../images/enjoy-movie.png';
 import profile1 from '../images/profile-1.jpg';
 import profile2 from '../images/profile-2.jpg';
 import profile3 from '../images/profile-3.jpg';
+import '../css/MainSection.css';
 
 function MainSection() {
   return (
@@ -50,14 +51,14 @@ function MainSection() {
             </p>
           </div>
           <div className="flex-step1">
-            <img src={addPlan} />
+            <img className="plan" src={addPlan} />
           </div>
         </div>
 
         <div className="step1">
           <span className="main-line-step3-btn">step 3</span>
           <div className="flex-step1">
-            <img src={enjoyMovie} />
+            <img className="enjoy" src={enjoyMovie} />
           </div>
           <div className="flex-step3-right">
             <h3>And finally you are here !!</h3>

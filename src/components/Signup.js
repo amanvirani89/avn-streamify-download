@@ -17,7 +17,7 @@ function Signup() {
           emailRef.current.value,
           passwordRef.current.value
         )
-        .then((userAuth) => {
+        .then(() => {
           auth.currentUser
             .updateProfile({
               displayName: nameRef.current.value,

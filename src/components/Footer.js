@@ -1,5 +1,6 @@
 import React from 'react';
 import logoimage from '../images/Logo-Movie-Project-footer.png';
+import '../css/Footer.css';
 
 function Footer() {
   return (

@@ -1,12 +1,15 @@
 import React from 'react';
 import { auth } from '../firebase';
 import requests from '../Requests';
+import Banner from './Banner';
 import Rows from './Rows';
+import Footer from './Footer';
 
 function HomePage() {
   return (
     <div>
-      <button onClick={() => auth.signOut()}>SignOut</button>
+      {/* <Banner fetchUrl={requests.fetchTrending} /> */}
+      {/* <button onClick={() => auth.signOut()}>SignOut</button> */}
       <Rows movieTitle="Trending Movies" fetchUrl={requests.fetchTrending} />
       <Rows movieTitle="Originals" fetchUrl={requests.fetchNetflixOriginals} />
       <Rows movieTitle="Top Rated" fetchUrl={requests.fetchTopRated} />
@@ -18,6 +21,7 @@ function HomePage() {
         fetchUrl={requests.fetchRomanceMovies}
       />
       <Rows movieTitle="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+      <Footer />
     </div>
   );
 }
