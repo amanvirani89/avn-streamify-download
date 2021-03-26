@@ -81,8 +81,8 @@
   text-decoration: none;
   color: gray;
 }
-.Login-form-group span:hover,
-.Login-form-group p:hover {
+.Login-form-group .forgot:hover,
+.Login-form-group .account:hover {
   color: black;
 }
 .reset-pass-green {
@@ -95,7 +95,7 @@
   color: red;
   background-color: #ffcccb;
 }
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 768px) {
   .Login-svg {
     display: none;
   }
@@ -108,6 +108,8 @@
   }
   form {
     padding: 1em;
+    max-width: 50%;
+    margin-left: 20%;
   }
   .login-area {
     margin: 150px 0;

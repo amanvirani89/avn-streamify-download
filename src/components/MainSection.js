@@ -17,10 +17,11 @@ function MainSection() {
           <img src={aboutImage} />
         </div>
         <div className="about-column">
-          <p> we are here</p>
-          <p> watch movies and enjoy at very flexible rates</p>
-          <p>Providing you high quality and latest movies</p>
-          <p>we accept your feedback !!</p>
+          <p>
+            {' '}
+            we are here watch movies and enjoy at very flexible rates Providing
+            you high quality and latest movies we accept your feedback !!
+          </p>
         </div>
       </div>
 

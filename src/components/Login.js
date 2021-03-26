@@ -19,7 +19,7 @@ function Login() {
         passwordRef.current.value
       )
       .then((userAuth) => {
-        console.log(userAuth);
+        // console.log(userAuth);
         setMessage('');
         setError(false);
       })
@@ -85,7 +85,7 @@ function Login() {
               </div>
               <div className="Login-form-group">
                 <Link to="/signup">
-                  <p>
+                  <p className="account">
                     Dont have an account ?<span> Sign Up</span>
                   </p>
                 </Link>

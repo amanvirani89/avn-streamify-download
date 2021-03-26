@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logoimage from '../images/Logo-Movie-Project.png';
-import { auth } from '../firebase';
 import '../css/Navbar_home.css';
+import { auth } from '../firebase';
 
 function Navbar_home() {
+  console.log(auth.currentUser);
   return (
     <header>
       <div className="banner-container">
         <nav>
-          <div className="navigation">
-            <div className="Logo">
+          <div className="navigation-home">
+            <div className="Logo-home">
               <Link to="/">
                 <img src={logoimage} />
               </Link>

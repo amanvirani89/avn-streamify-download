@@ -46,11 +46,11 @@ a:active {
   border-width: thin;
 }
 
-@media screen and (max-width: 960px) {
-  header .navigation {
-    width: 100%;
+@media screen and (max-width: 768px) {
+  /* header .navigation {
+    width: 84.5%;
     height: 70px;
-  }
+  } */
   .Logo img {
     position: absolute;
     top: 0;
@@ -60,7 +60,7 @@ a:active {
   }
   .btn-sign-in a {
     padding-top: 5px;
-    margin-right: 10px;
+    margin-right: 5%;
     text-align: center;
     align-content: center;
   }

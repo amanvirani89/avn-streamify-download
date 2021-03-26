@@ -7,31 +7,47 @@ function Signup() {
   const passwordRef = useRef(null);
   const cpasswordRef = useRef(null);
   const nameRef = useRef(null);
-  const [Error, setError] = useState('');
+  const [message, setMessage] = useState(null);
+  const [hasError, setError] = useState(false);
+
   const register = (e) => {
     e.preventDefault();
-    if (passwordRef.current.value == cpasswordRef.current.value) {
-      setError('');
-      auth
-        .createUserWithEmailAndPassword(
-          emailRef.current.value,
-          passwordRef.current.value
-        )
-        .then(() => {
-          auth.currentUser
-            .updateProfile({
-              displayName: nameRef.current.value,
-            })
-            .then((user) => {
-              console.log(user);
-              alert('User registered');
-            });
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
+    if (
+      nameRef.current.value == '' ||
+      emailRef.current.value == '' ||
+      passwordRef.current.value == '' ||
+      cpasswordRef.current.value == ''
+    ) {
+      setMessage('Please fill all the fields');
+      setError(true);
     } else {
-      setError('Password Does Not Match');
+      if (passwordRef.current.value == cpasswordRef.current.value) {
+        auth
+          .createUserWithEmailAndPassword(
+            emailRef.current.value,
+            passwordRef.current.value
+          )
+          .then(() => {
+            setMessage('');
+            setError(false);
+            auth.currentUser
+              .updateProfile({
+                displayName: nameRef.current.value,
+              })
+              .then((user) => {
+                console.log(user);
+                alert('User registered');
+              });
+          })
+          .catch((error) => {
+            setMessage(error.message);
+            setError(true);
+            // document.getElementById('email').focus();
+          });
+      } else {
+        setMessage('Password Does Not Match');
+        setError(true);
+      }
     }
   };
   return (
@@ -89,7 +105,11 @@ function Signup() {
                   id="cpassword"
                 />
               </div>
-              <h3 style={{ color: 'red' }}>{Error}</h3>
+              {message != null && (
+                <div className="Login-form-group">
+                  <p className={hasError ? 'reset-pass-red' : ''}>{message}</p>
+                </div>
+              )}
               <div div className="Login-form-group">
                 <input
                   onClick={register}

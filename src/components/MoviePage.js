@@ -6,7 +6,7 @@ import Footer from './Footer';
 
 function MoviePage() {
   return (
-    <div>
+    <div className="displaysection">
       {/* <button onClick={() => auth.signOut()}>SignOut</button> */}
       <Rows movieTitle="Action Movies" fetchUrl={requests.fetchActionMovies} />
       <Rows movieTitle="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
