@@ -31,7 +31,7 @@ function Navbar_home() {
               </Link>
             </div> */}
             <div className="dropdown">
-              <Link to="/">
+              <Link to="/Profile">
                 <i class="fa fa-fw fa-user"></i>
               </Link>
               <div className="dropdown-content">

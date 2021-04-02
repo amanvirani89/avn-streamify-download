@@ -1,0 +1,37 @@
+.plans-available {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  opacity: 0.8;
+}
+
+.plans-available:hover {
+  opacity: 1;
+}
+
+.plans-available button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  cursor: pointer;
+}
+.plans-info {
+  display: flex;
+  flex-direction: column;
+}
+.plans-info h5,
+.plans-info h6 {
+  margin-block-end: 3px;
+  margin-block-start: 0;
+  padding: 0;
+  font-size: 1em;
+}
+.plans-info h6 {
+  font-size: 0.6em;
+}
+
+.plans-disabled button {
+  background-color: gray !important;
+}

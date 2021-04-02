@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import './css/MediaQuery.css';
 import './css/Navbar_home.css';
-
+import db from './firebase';
 import Navbar_landing from './components/Navbar_landing';
 import {
   BrowserRouter as Router,
@@ -21,9 +21,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import MoviePage from './components/MoviePage';
 import TvPage from './components/TvPage';
 import Navbar_home from './components/Navbar_home';
+import ProfilePage from './components/ProfilePage';
 
 function App() {
   const user = useSelector(selectUser);
+  // const [subscription, setSubscription] = useState(null);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -42,6 +44,23 @@ function App() {
     });
     return authentication;
   }, [dispatch]);
+
+  // useEffect(() => {
+  //   db.collection('customers')
+  //     .doc(user?.uid)
+  //     .collection('subscriptions')
+  //     .get()
+  //     .then((querySnapshot) => {
+  //       querySnapshot.forEach(async (subscription) => {
+  //         setSubscription({
+  //           role: subscription?.data().role,
+  //           current_period_end: subscription?.data().current_period_end.seconds,
+  //           current_period_start: subscription?.data().current_period_start
+  //             .seconds,
+  //         });
+  //       });
+  //     });
+  // });
 
   return (
     <>
@@ -66,6 +85,8 @@ function App() {
           <>
             <Navbar_home />
             <Switch>
+              <Route path="/Profile" exact component={ProfilePage} />
+              {/* {subscription == null && <Redirect to="/Profile" />} */}
               <Route path="/" exact component={HomePage} />
               <Route path="/HomePage" exact component={HomePage} />
               <Route path="/MoviePage" exact component={MoviePage} />
