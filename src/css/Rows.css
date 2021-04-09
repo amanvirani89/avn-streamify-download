@@ -1,3 +1,45 @@
+.card-container {
+  position: relative;
+  /* width: 50%; */
+  margin: 0.8em;
+  padding: 0.2em;
+}
+
+.card-container img {
+  display: block;
+  width: 250px;
+  height: 330px;
+}
+
+.movie-over {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: hsla(0, 0%, 0%, 0.74);
+  overflow: hidden;
+  width: 99%;
+  height: 0;
+  transition: 0.5s ease;
+}
+
+.card-container:hover .movie-over {
+  bottom: 0;
+  height: 100%;
+}
+
+.over-text {
+  color: white;
+  font-size: 15px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: initial;
+}
+
 .movie-group {
   margin-top: 5em;
   display: flex;
@@ -6,20 +48,30 @@
 .movie-data {
   display: flex;
   overflow-x: scroll;
+  overflow-y: hidden;
   cursor: pointer;
   object-fit: contain;
-  padding: 10px;
+  /* padding: 5px; */
 }
-.movie-data img {
-  width: 320px;
-  height: 320px;
-  margin: 0.4em;
-  border-radius: 2em;
+/* .card-container{
+  width: 250px;
+  margin: 0.8em;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+} */
+/* .movie-data img {
+  width: 250px;
+  height: 330px;
+  position: relative;
 }
 .movie-data img:hover {
   transform: scale(1.08);
-  opacity: 1;
-}
+  
+  
+} */
+/* .movie-over {
+  background-color: hsla(0, 0%, 0%, 0.84);
+} */
 .movie-data::-webkit-scrollbar {
   display: none;
 }
@@ -27,12 +79,43 @@
   margin-top: 65px;
   padding: 20px;
 }
+.voting {
+  float: right;
+}
+/* .movie-over{
+  padding: 0 1rem;
+  margin: 0;
+  color: white;
+  height: 0px;
+  top: -380px;
+  position: relative;
+  opacity: 0;
+}
+.movie-over:hover {
+  opacity: 1;
+} */
 
-@media (min-width: 769px) and (max-width: 1199px) {
+.movie-description {
+  justify-content: space-between;
+  display: flex;
+  padding: 2em;
+  color: yellow;
+}
+.voting-green {
+  color: green;
+}
+.voting-red {
+  color: red;
+}
+
+/* .movie-card{
+  display: flex;
+  flex-direction: column;
+} */
+/* @media (min-width: 769px) and (max-width: 1199px) {
   .movie-data img {
     width: 300px;
     height: 320px;
-    margin: 0.5em;
   }
 }
 @media screen and (max-width: 768px) {
@@ -46,4 +129,4 @@
     transform: scale(1.07);
     opacity: 1;
   }
-}
+} */
