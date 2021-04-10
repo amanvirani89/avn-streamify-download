@@ -8,30 +8,38 @@ function Banner({ fetchUrl }) {
   useEffect(() => {
     async function showBanner() {
       const response = await axios.get(fetchUrl);
-      setBanner(response.data.results);
+      setBanner(
+        response.data.results[
+          Math.floor(Math.random() * response.data.results.length - 1)
+        ]
+      );
       return response;
     }
     showBanner();
   }, []);
+
   console.log(Banner);
 
   return (
-    <div>
-      <header className="banner">
-        {Banner.backdrop_path && (
-          <img
-            key={Banner.id}
-            src={`http://image.tmdb.org/t/p/original/${Banner.backdrop_path}`}
-            alt={
-              Banner.name ||
-              Banner.original_name ||
-              Banner.title ||
-              Banner.original_title
-            }
-          />
-        )}
-      </header>
-    </div>
+    <header
+      className="banner"
+      style={{
+        backgroundImage: `url('https://image.tmdb.org/t/p/original/${
+          Banner?.backdrop_path || Banner?.poster_path
+        }')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+      }}
+    >
+      <div className="banner-contents">
+        <h1 className="banner-title">
+          {Banner?.title ||
+            Banner?.name ||
+            Banner?.original_name ||
+            Banner?.original_title}
+        </h1>
+      </div>
+    </header>
   );
 }
 

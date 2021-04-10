@@ -45,6 +45,9 @@ function Rows({ movieTitle, fetchUrl }) {
     }
   };
 
+  function truncateOverview(str, a) {
+    return str?.length > a ? str.substr(0, a - 1) + '...' : str;
+  }
   console.log(Movies);
 
   return (
@@ -60,7 +63,6 @@ function Rows({ movieTitle, fetchUrl }) {
                 <div className="card-container">
                   <img
                     key={movie.id}
-                    onClick={() => handleClick(movie)}
                     src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                     alt={
                       movie.title ||
@@ -71,12 +73,15 @@ function Rows({ movieTitle, fetchUrl }) {
                   />
                   {/* {console.log(movie)} */}
 
-                  {/* <div className="movie-over">
+                  <div
+                    className="movie-over"
+                    onClick={() => handleClick(movie)}
+                  >
                     <div className="over-text">
                       <h2>Overview</h2>
-                      <span>{movie.overview}</span>
+                      <span>{truncateOverview(movie.overview, 240)}</span>
                     </div>
-                  </div> */}
+                  </div>
                 </div>
 
                 <div className="movie-description">

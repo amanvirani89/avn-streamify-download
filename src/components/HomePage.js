@@ -8,7 +8,7 @@ import Footer from './Footer';
 function HomePage() {
   return (
     <div className="displaysection">
-      {/* <Banner fetchUrl={requests.fetchTrending} /> */}
+      <Banner fetchUrl={requests.fetchNetflixOriginals} />
       {/* <button onClick={() => auth.signOut()}>SignOut</button> */}
       <Rows movieTitle="Trending Movies" fetchUrl={requests.fetchTrending} />
       <Rows movieTitle="Originals" fetchUrl={requests.fetchNetflixOriginals} />
