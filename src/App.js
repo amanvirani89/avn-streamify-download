@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     const authentication = auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
-        console.log(userAuth);
+        // console.log(userAuth);
         dispatch(
           login({
             uid: userAuth.uid,

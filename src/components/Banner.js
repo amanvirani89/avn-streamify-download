@@ -18,7 +18,7 @@ function Banner({ fetchUrl }) {
     showBanner();
   }, []);
 
-  console.log(Banner);
+  // console.log(Banner);
 
   return (
     <header

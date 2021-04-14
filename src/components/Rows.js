@@ -30,16 +30,16 @@ function Rows({ movieTitle, fetchUrl }) {
     if (trailerUrl) {
       setTrailerUrl('');
     } else {
-      console.log(movie);
+      // console.log(movie);
       movieTrailer(
         movie.name || movie.title || movie.original_name || movie.original_title
       )
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerUrl(urlParams.get('v'));
-          console.log(urlParams);
-          console.log(trailerUrl);
-          console.log(url);
+          // console.log(urlParams);
+          // console.log(trailerUrl);
+          // console.log(url);
         })
         .catch((error) => console.log(error));
     }
@@ -48,7 +48,7 @@ function Rows({ movieTitle, fetchUrl }) {
   function truncateOverview(str, a) {
     return str?.length > a ? str.substr(0, a - 1) + '...' : str;
   }
-  console.log(Movies);
+  // console.log(Movies);
 
   return (
     <div className="movie-group">

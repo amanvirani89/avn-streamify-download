@@ -53,16 +53,16 @@ function Footer() {
           </p>
 
           <div className="footer-icons">
-            <a href="#">
+            <a href="https://www.facebook.com" target="_blank">
               <i className="fa fa-facebook"></i>
             </a>
-            <a href="#">
+            <a href="https://www.twitter.com" target="_blank">
               <i className="fa fa-twitter"></i>
             </a>
-            <a href="#">
+            <a href="https://www.instagram.com" target="_blank">
               <i className="fa fa-instagram"></i>
             </a>
-            <a href="#">
+            <a href="https://www.youtube.com" target="_blank">
               <i className="fa fa-youtube"></i>
             </a>
           </div>

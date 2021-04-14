@@ -9,7 +9,6 @@ function HomePage() {
   return (
     <div className="displaysection">
       <Banner fetchUrl={requests.fetchNetflixOriginals} />
-      {/* <button onClick={() => auth.signOut()}>SignOut</button> */}
       <Rows movieTitle="Trending Movies" fetchUrl={requests.fetchTrending} />
       <Rows movieTitle="Originals" fetchUrl={requests.fetchNetflixOriginals} />
       <Rows movieTitle="Top Rated" fetchUrl={requests.fetchTopRated} />
@@ -20,7 +19,7 @@ function HomePage() {
         movieTitle="Romantic Movies"
         fetchUrl={requests.fetchRomanceMovies}
       />
-      {/* <Rows movieTitle="Documentaries" fetchUrl={requests.fetchDocumentaries} /> */}
+      <Rows movieTitle="Documentaries" fetchUrl={requests.fetchDocumentaries} />
       <Footer />
     </div>
   );

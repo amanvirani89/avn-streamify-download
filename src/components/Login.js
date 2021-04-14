@@ -45,7 +45,6 @@ function Login() {
               <h1>Sign In</h1>
               <h3>Welcome back ! Login to your account </h3>
               <div className="Login-form-group">
-                {/* <label htmlFor="Email">Email-id :- </label> */}
                 <input
                   ref={emailRef}
                   type="email"
@@ -56,7 +55,6 @@ function Login() {
               </div>
 
               <div className="Login-form-group">
-                {/* <label htmlFor="Paasword">Password :- </label> */}
                 <input
                   ref={passwordRef}
                   type="password"

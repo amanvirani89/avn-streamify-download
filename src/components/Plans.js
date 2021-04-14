@@ -18,14 +18,14 @@ function Plans() {
         const products = {};
         querySnapshot.forEach(async function (pDoc) {
           products[pDoc.id] = pDoc.data();
-          console.log(pDoc.id, ' => ', pDoc.data());
+          // console.log(pDoc.id, ' => ', pDoc.data());
           const priceSnap = await pDoc.ref.collection('prices').get();
           priceSnap.docs.forEach((doc) => {
             products[pDoc.id].prices = {
               priceId: doc.id,
               priceData: doc.data(),
             };
-            console.log(doc.id, ' => ', doc.data());
+            // console.log(doc.id, ' => ', doc.data());
           });
         });
         setProduct(products);

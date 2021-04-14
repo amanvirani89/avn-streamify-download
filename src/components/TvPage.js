@@ -7,7 +7,6 @@ import Rows from './Rows';
 function TvPage() {
   return (
     <div className="displaysection">
-      {/* <button onClick={() => auth.signOut()}>SignOut</button> */}
       <Rows
         movieTitle="Trending TV Shows"
         fetchUrl={requests.fetchNetflixOriginals}
@@ -16,6 +15,8 @@ function TvPage() {
         movieTitle="Popular TV Shows"
         fetchUrl={requests.fetchPopularTvShows}
       />
+      <Rows movieTitle="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+
       <Footer />
     </div>
   );

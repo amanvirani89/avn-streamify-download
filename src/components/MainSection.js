@@ -17,10 +17,13 @@ function MainSection() {
           <img src={aboutImage} />
         </div>
         <div className="about-column">
+          <h4> Watch movies, shows, and more on AVN-Streamify</h4>
           <p>
             {' '}
-            we are here watch movies and enjoy at very flexible rates Providing
-            you high quality and latest movies we accept your feedback !!
+            Watch exclusive Amazon Originals, popular movies, TV shows, sports,
+            and live events — it’s all included with a membership. Members can
+            watch even more by subscribing to premium and specialty channels. No
+            cable required.
           </p>
         </div>
       </div>
@@ -90,11 +93,12 @@ function MainSection() {
                 <img className="img-1" src={profile1} />
               </label>
               <div className="content content-1">
-                <span>5 December 2018</span>
-                <div className="title">K.G.F Chapter 1</div>
+                <span>09 April 2021</span>
+                <div className="title">5 Things About ‘Thunder Force’ </div>
                 <div className="text">
-                  National Film Award,India ,2019 and Filmfare Award - Kannada
-                  Film Industry
+                  Melissa McCarthy and Octavia Spencer star in the new Netflix
+                  film Thunder Force as two childhood best friends who reunite
+                  as an unlikely crime-fighting superhero duo
                 </div>
                 <button>Read more</button>
               </div>
@@ -119,12 +123,12 @@ function MainSection() {
                 <img className="img-3" src={profile3} />
               </label>
               <div className="content content-3">
-                <span>26 December 2019</span>
-                <div className="title">Lorem Ipsum Dolor</div>
+                <span>March 11, 2021</span>
+                <div className="title">Roohi Movie</div>
                 <div className="text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                  excepturi nemo commodi sint eum ipsam odit atque aliquam
-                  officia impedit.
+                  Roohi is a 2021 Indian Hindi-language comedy horror film
+                  directed by Hardik Mehta and produced by Dinesh Vijan under
+                  the banner Maddock Films
                 </div>
                 <button>Read more</button>
               </div>

@@ -9,6 +9,7 @@ function Signup() {
   const nameRef = useRef(null);
   const [message, setMessage] = useState(null);
   const [hasError, setError] = useState(false);
+  let reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!_%*?&])[A-Za-z\d@$!_%*?&]{8,}$/;
 
   const register = (e) => {
     e.preventDefault();
@@ -21,31 +22,38 @@ function Signup() {
       setMessage('Please fill all the fields');
       setError(true);
     } else {
-      if (passwordRef.current.value == cpasswordRef.current.value) {
-        auth
-          .createUserWithEmailAndPassword(
-            emailRef.current.value,
-            passwordRef.current.value
-          )
-          .then(() => {
-            setMessage('');
-            setError(false);
-            auth.currentUser
-              .updateProfile({
-                displayName: nameRef.current.value,
-              })
-              .then((user) => {
-                console.log(user);
-                alert('User registered');
-              });
-          })
-          .catch((error) => {
-            setMessage(error.message);
-            setError(true);
-            // document.getElementById('email').focus();
-          });
+      if (reg.test(passwordRef.current.value)) {
+        if (passwordRef.current.value == cpasswordRef.current.value) {
+          auth
+            .createUserWithEmailAndPassword(
+              emailRef.current.value,
+              passwordRef.current.value
+            )
+            .then(() => {
+              setMessage('');
+              setError(false);
+              auth.currentUser
+                .updateProfile({
+                  displayName: nameRef.current.value,
+                })
+                .then((user) => {
+                  // console.log(user);
+                  // alert('User registered');
+                });
+            })
+            .catch((error) => {
+              setMessage(error.message);
+              setError(true);
+              // document.getElementById('email').focus();
+            });
+        } else {
+          setMessage('Password Does Not Match');
+          setError(true);
+        }
       } else {
-        setMessage('Password Does Not Match');
+        setMessage(
+          'Password must be Minimum 8 characters, at least one uppercase letter, one lowercase letter, one number and one special character:'
+        );
         setError(true);
       }
     }
@@ -69,16 +77,7 @@ function Signup() {
                   ref={nameRef}
                 />
               </div>
-              {/* <div className="Login-form-group">
-                <input
-                  type="Last Name"
-                  name="lname"
-                  placeholder="Enter your Last Name"
-                  id="lname"
-                />
-              </div> */}
               <div className="Login-form-group">
-                {/* <label htmlFor="Email">Email-id :- </label> */}
                 <input
                   ref={emailRef}
                   type="email"

@@ -36,7 +36,6 @@ function ForgetPassword() {
             <form>
               <h1>Forgot Password ?</h1>
               <div className="Login-form-group">
-                {/* <label htmlFor="Email">Email-id :- </label> */}
                 <input
                   type="email"
                   name="email"
@@ -46,16 +45,6 @@ function ForgetPassword() {
                   ref={emailRef}
                 />
               </div>
-              {/* <div className="Login-form-group">
-                <input
-                  type="checkbox"
-                  id="policy"
-                  name="policy"
-                  value="privacypolicy"
-                  required
-                />
-                <label htmlFor="policy"> I agree to the Privacy Policy</label>
-              </div> */}
               {message != null && (
                 <div className="Login-form-group">
                   <p

@@ -5,7 +5,7 @@ import '../css/Navbar_home.css';
 import { auth } from '../firebase';
 
 function Navbar_home() {
-  console.log(auth.currentUser);
+  // console.log(auth.currentUser);
   return (
     <header>
       <div className="banner-container">
@@ -25,21 +25,10 @@ function Navbar_home() {
             <div className="movies">
               <Link to="/HomePage">Popular</Link>
             </div>
-            {/* <div className="Search">
-              <Link to="/">
-              <i class="fa fa-search"></i>
-              </Link>
-            </div> */}
             <div className="dropdown">
               <Link to="/Profile">
-                <i class="fa fa-fw fa-user"></i>
+                <i className="fa fa-fw fa-user"></i>
               </Link>
-              <div className="dropdown-content">
-                <p>{auth.currentUser.displayName}</p>
-                <div className="btn-log-out">
-                  <button onClick={() => auth.signOut()}>LogOut</button>
-                </div>
-              </div>
             </div>
           </div>
         </nav>
