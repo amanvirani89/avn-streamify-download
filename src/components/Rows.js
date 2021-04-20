@@ -79,7 +79,7 @@ function Rows({ movieTitle, fetchUrl }) {
                   >
                     <div className="over-text">
                       <h2>Overview</h2>
-                      <span>{truncateOverview(movie.overview, 240)}</span>
+                      <span>{truncateOverview(movie.overview, 200)}</span>
                     </div>
                   </div>
                 </div>

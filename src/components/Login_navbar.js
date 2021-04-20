@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoimage from '../images/Logo-Movie-Project.png';
+import logoimage from '../images/Logo-Movie-Project.jpg';
 import '../css/Login_Navbar.css';
 
 function Login_Navbar() {

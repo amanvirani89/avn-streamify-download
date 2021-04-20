@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoimage from '../images/Logo-Movie-Project.png';
+import logoimage from '../images/Logo-Movie-Project.jpg';
 import '../css/Navbar_landing.css';
 
 function Navbar_landing() {

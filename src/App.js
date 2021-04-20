@@ -16,6 +16,11 @@ import SignUpPage from './components/pages/SignUpPage';
 import ForgetPasswordPage from './components/pages/ForgotPasswordPage';
 import HomePage from './components/HomePage';
 import { login, logout, selectUser } from './features/userSlice';
+import {
+  isSubscribed,
+  resetSubscribe,
+  subscriptionStatus,
+} from './features/subscriberSlice';
 import { auth } from './firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import MoviePage from './components/MoviePage';
@@ -25,13 +30,13 @@ import ProfilePage from './components/ProfilePage';
 
 function App() {
   const user = useSelector(selectUser);
-  // const [subscription, setSubscription] = useState(null);
+  const subscription = useSelector(subscriptionStatus);
   const dispatch = useDispatch();
 
   useEffect(() => {
     const authentication = auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
-        // console.log(userAuth);
+        console.log(userAuth);
         dispatch(
           login({
             uid: userAuth.uid,
@@ -39,28 +44,34 @@ function App() {
           })
         );
       } else {
+        dispatch(resetSubscribe());
         dispatch(logout());
       }
     });
     return authentication;
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   db.collection('customers')
-  //     .doc(user?.uid)
-  //     .collection('subscriptions')
-  //     .get()
-  //     .then((querySnapshot) => {
-  //       querySnapshot.forEach(async (subscription) => {
-  //         setSubscription({
-  //           role: subscription?.data().role,
-  //           current_period_end: subscription?.data().current_period_end.seconds,
-  //           current_period_start: subscription?.data().current_period_start
-  //             .seconds,
-  //         });
-  //       });
-  //     });
-  // });
+  useEffect(() => {
+    db.collection('customers')
+      .doc(user?.uid)
+      .collection('subscriptions')
+      .get()
+      .then((u) => {
+        u.forEach((sub) => {
+          //console.log(subscription.data());
+          if (subscription == null) {
+            dispatch(
+              isSubscribed({
+                role: sub.data().role,
+                status: sub.data().status,
+              })
+            );
+            console.log(subscription?.status);
+          }
+        });
+      });
+    console.log(subscription?.status);
+  });
 
   return (
     <>
@@ -86,12 +97,17 @@ function App() {
             <Navbar_home />
             <Switch>
               <Route path="/Profile" exact component={ProfilePage} />
-              {/* {subscription == null && <Redirect to="/Profile" />} */}
-              <Route path="/" exact component={HomePage} />
-              <Route path="/HomePage" exact component={HomePage} />
-              <Route path="/MoviePage" exact component={MoviePage} />
-              <Route path="/TvPage" exact component={TvPage} />
-              <Redirect to="/" />
+              {subscription == null ? (
+                <Redirect to="/Profile" />
+              ) : (
+                <>
+                  <Route path="/" exact component={HomePage} />
+                  <Route path="/HomePage" exact component={HomePage} />
+                  <Route path="/MoviePage" exact component={MoviePage} />
+                  <Route path="/TvPage" exact component={TvPage} />
+                  <Redirect to="/" />
+                </>
+              )}
             </Switch>
           </>
         )}

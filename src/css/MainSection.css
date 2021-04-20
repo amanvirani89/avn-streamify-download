@@ -337,4 +337,10 @@ input[type='checkbox'] {
     margin-left: 25%;
     margin-top: 0;
   }
+  .blogs .content .title {
+    font-size: 20px;
+  }
+  .content .text {
+    font-size: 15px;
+  }
 }

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logoimage from '../images/Logo-Movie-Project.png';
+import logoimage from '../images/Logo-Movie-Project.jpg';
 import '../css/Navbar_home.css';
 import { auth } from '../firebase';
 
 function Navbar_home() {
+  const [search, setSearch] = useState(null);
+
+  function handleSearchChange(e) {
+    setSearch(e.target.value);
+  }
   // console.log(auth.currentUser);
   return (
     <header>
@@ -25,6 +30,16 @@ function Navbar_home() {
             <div className="movies">
               <Link to="/HomePage">Popular</Link>
             </div>
+            {/* <div className="searchBox">
+              <input
+                type="text"
+                name="searchBox"
+                placeholder="Search Movies"
+                id="searchBox"
+                value={search}
+                onChange={handleSearchChange}
+              />
+            </div> */}
             <div className="dropdown">
               <Link to="/Profile">
                 <i className="fa fa-fw fa-user"></i>
