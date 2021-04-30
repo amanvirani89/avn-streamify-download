@@ -3,15 +3,24 @@ import React, { useEffect, useState } from 'react';
 import '../css/Rows.css';
 import movieTrailer from 'movie-trailer';
 import YouTube from 'react-youtube';
+// import axiosMain from 'axios';
 
 function Rows({ movieTitle, fetchUrl }) {
   const [Movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState('');
+  // let cancelToken = axiosMain.CancelToken.source();
 
   useEffect(() => {
     async function movieData() {
+      // if (typeof cancelToken != typeof undefined) {
+      //   cancelToken.cancel('canceling previous request');
+      // }
+
+      // cancelToken = axiosMain.CancelToken.source();
+      console.log(fetchUrl);
       const response = await axios.get(fetchUrl);
       setMovies(response.data.results);
+      console.table(response.data);
       return response;
     }
 
@@ -30,7 +39,7 @@ function Rows({ movieTitle, fetchUrl }) {
     if (trailerUrl) {
       setTrailerUrl('');
     } else {
-      // console.log(movie);
+      //console.log(movie);
       movieTrailer(
         movie.name || movie.title || movie.original_name || movie.original_title
       )
@@ -48,7 +57,7 @@ function Rows({ movieTitle, fetchUrl }) {
   function truncateOverview(str, a) {
     return str?.length > a ? str.substr(0, a - 1) + '...' : str;
   }
-  // console.log(Movies);
+  console.log(Movies);
 
   return (
     <div className="movie-group">

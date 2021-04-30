@@ -27,6 +27,7 @@ import MoviePage from './components/MoviePage';
 import TvPage from './components/TvPage';
 import Navbar_home from './components/Navbar_home';
 import ProfilePage from './components/ProfilePage';
+import SearchPage from './components/SearchPage';
 
 function App() {
   const user = useSelector(selectUser);
@@ -105,6 +106,7 @@ function App() {
                   <Route path="/HomePage" exact component={HomePage} />
                   <Route path="/MoviePage" exact component={MoviePage} />
                   <Route path="/TvPage" exact component={TvPage} />
+                  <Route path="/Search" exact component={SearchPage} />
                   <Redirect to="/" />
                 </>
               )}

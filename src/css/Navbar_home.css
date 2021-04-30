@@ -24,7 +24,8 @@ header .navigation-home {
   cursor: pointer;
 }
 
-.movies {
+.movies,
+.searchBox {
   float: left;
   margin-top: 10px;
 }
@@ -37,6 +38,11 @@ header .navigation-home {
 }
 .movies a:hover {
   background-color: #111;
+}
+.searchBox img {
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 30px;
 }
 
 /* .Search {
