@@ -111,7 +111,7 @@
   transform: translateX(-50%);
   bottom: 0;
   left: 50%;
-  top: 2980px;
+  top: 2800px;
 }
 .works-container :last-child::after {
   content: '';
@@ -131,7 +131,7 @@
   animation-name: timeline_success_boxshadow;
   bottom: 0;
   left: 50%;
-  top: 2980px;
+  top: 2800px;
 }
 .works-container h3,
 .works-container p {
